@@ -1,0 +1,6 @@
+.venv/
+data/commercestack.duckdb
+__pycache__/
+*.pyc
+.DS_Store
+warehouse/seeds/*.csv
