@@ -1,0 +1,28 @@
+version: 2
+
+seeds:
+  - name: olist_orders_dataset
+    columns:
+      - name: order_id
+        tests: [not_null, unique]
+      - name: customer_id
+        tests: [not_null]
+      - name: order_status
+        tests:
+          - accepted_values:
+              values: ['delivered','shipped','invoiced','processing','canceled','unavailable']
+
+  - name: olist_customers_dataset
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+
+  - name: olist_order_items_dataset
+    columns:
+      - name: order_id
+        tests: [not_null]
+      - name: price
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "price >= 0"

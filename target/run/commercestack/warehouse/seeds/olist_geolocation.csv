@@ -1,0 +1,11 @@
+
+    
+    
+    truncate table "commercestack"."main_raw"."olist_geolocation";
+    -- dbt seed --
+    
+          COPY "commercestack"."main_raw"."olist_geolocation" FROM '/Users/apple/Desktop/commercestack/warehouse/seeds/olist_geolocation.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

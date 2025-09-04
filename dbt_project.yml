@@ -1,0 +1,22 @@
+name: 'commercestack'
+version: '1.0.0'
+config-version: 2
+
+profile: 'commercestack'
+
+model-paths: ["models"]
+seed-paths: ["warehouse/seeds"]
+
+models:
+  commercestack:
+    staging:
+      +schema: staging
+      +materialized: view
+    marts:
+      +schema: marts
+      +materialized: table
+
+seeds:
+  commercestack:
+    +schema: raw
+    +quote_columns: false

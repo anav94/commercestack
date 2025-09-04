@@ -1,0 +1,7 @@
+commercestack:
+  target: duckdb
+  outputs:
+    duckdb:
+      type: duckdb
+      path: data/commercestack.duckdb
+      threads: 4

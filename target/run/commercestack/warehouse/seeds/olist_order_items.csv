@@ -1,0 +1,11 @@
+
+    
+    
+    truncate table "commercestack"."main_raw"."olist_order_items";
+    -- dbt seed --
+    
+          COPY "commercestack"."main_raw"."olist_order_items" FROM '/Users/apple/Desktop/commercestack/warehouse/seeds/olist_order_items.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  
